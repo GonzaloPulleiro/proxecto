@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/loginPageBackground">
+
+
+    <!-- Bottom Navigation -->
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        android:padding="16dp">
+
+
+        <TextView
+            android:id="@+id/text_view_mensaje"
+            android:layout_width="177dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Tienes un total de 0 recetas favoritas"
+            android:textSize="15sp"
+            android:visibility="visible" />
+
+        <Spinner
+            android:id="@+id/spinner_order"
+            android:layout_width="127dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="77dp"
+            android:layout_marginEnd="26dp"
+            android:layout_marginBottom="8dp"
+            android:layout_toEndOf="@+id/text_view_mensaje" />
+
+        <EditText
+            android:id="@+id/searchEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/spinner_order"
+            android:layout_marginTop="8dp"
+            android:hint="Buscar receta por nombre"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="562dp"
+
+        android:layout_above="@id/bottom_navigation"
+        android:layout_below="@id/relativeLayout"
+
+
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="-2dp"
+        android:clipToPadding="false"
+        android:padding="8dp" />
+
+    <include
+        layout="@layout/navigation_layout"
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/loginPageBackground">
+
+    <!-- Título o encabezado de la pantalla -->
+    <TextView
+        android:id="@+id/tv_titulo_perfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Perfil"
+        android:textSize="24sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:textStyle="bold" />
+
+    <!-- Botón de Registrarse -->
+
+    <!-- Barra de navegación en la parte inferior de la pantalla -->
+    <include
+        layout="@layout/navigation_layout"
+        android:id="@+id/bottom_navigation"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>

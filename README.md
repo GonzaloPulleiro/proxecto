@@ -26,7 +26,7 @@ rendemento, principalmente).
 > Considerome unha persoa aplicada, e decidida, que busca acadar as metas que se propón.
 > En canto a tecnoloxía que máis domine, diría que Java, posto que é o fundamental deste FP, SQL, e pode que Python.  
 > Decanteime pola realización deste proxecto por aportar algo á comunidade que non sexa de pago, a meta principal é realizar unha aplicación fácil e intuitiva, sinxela de usar, e que aporte ideas novas á comunidade.  
-> Podese contactar conmigo a través do correo [gonzalopju@gmail.com"] ou a través do número telefónico [665013395].  
+> Podese contactar conmigo a través do correo [gonzalopju@gmail.com] ou a través do número telefónico [665013395].  
 
 ## Licencia
 

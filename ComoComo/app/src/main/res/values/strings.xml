@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">ComoComo</string>
+    <string name="titulo">ComoComo</string>
+    <string name="username">Nombre</string>
+    <string name="password">Contraseña</string>
+    <string name="next">Siguiente</string>
+    <string name="cancel">Cancelar</string>
+    <string name="iniciar">Iniciar Sesión</string>
+    <string name="registrar">Registarse</string>
+    <string name="introduce">Introduce los siguientes datos</string>
+    <string name="crearcuenta">Completa los campos</string>
+    <string name="email">Email</string>
+    <string name="search_title">Buscar</string>
+    <string name="filter">Filtrar</string>
+
+    <string name="hello">Bienvenid@</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_label_1">Inicio</string>
+    <string name="text_label_2">Recetas</string>
+    <string name="text_label_3">Menú</string>
+    <string name="text_label_4">Favoritos</string>
+    <string name="text_label_5">Perfil</string>
+
+
+</resources>

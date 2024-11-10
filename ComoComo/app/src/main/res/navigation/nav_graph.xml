@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/inicialFragment">
+
+    <fragment
+        android:id="@+id/inicialFragment"
+        android:name="com.app.comocomo.InicialFragment"
+        android:label="fragment_inicial"
+        tools:layout="@layout/fragment_inicial" >
+        <action
+            android:id="@+id/action_inicialFragment_to_iniciarSesionFragment"
+            app:destination="@id/iniciarSesionFragment" />
+        <action
+            android:id="@+id/action_inicialFragment_to_registrarUsuarioFragment"
+            app:destination="@id/registrarUsuarioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/iniciarSesionFragment"
+        android:name="com.app.comocomo.IniciarSesionFragment"
+        android:label="fragment_iniciar_sesion"
+        tools:layout="@layout/fragment_iniciar_sesion" >
+        <action
+            android:id="@+id/action_iniciarSesionFragment_to_inicioFragment"
+            app:destination="@id/inicioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrarUsuarioFragment"
+        android:name="com.app.comocomo.RegistrarUsuarioFragment"
+        android:label="fragment_registrar_usuario"
+        tools:layout="@layout/fragment_registrar_usuario" >
+        <action
+            android:id="@+id/action_registrarUsuarioFragment_to_iniciarSesionFragment"
+            app:destination="@id/iniciarSesionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/inicioFragment"
+        android:name="com.app.comocomo.InicioFragment"
+        android:label="fragment_inicio"
+        tools:layout="@layout/fragment_inicio" />
+    <fragment
+        android:id="@+id/recetaFragment"
+        android:name="com.app.comocomo.RecetaFragment"
+        android:label="fragment_receta"
+        tools:layout="@layout/fragment_receta"/>
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.app.comocomo.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" />
+    <fragment
+        android:id="@+id/favoritasFragment"
+        android:name="com.app.comocomo.FavoritosFragment"
+        android:label="fragment_favoritos"
+        tools:layout="@layout/fragment_favoritos" />
+    <fragment
+        android:id="@+id/perfilFragment"
+        android:name="com.app.comocomo.PerfilFragment"
+        android:label="fragment_perfil"
+        tools:layout="@layout/fragment_perfil" />
+
+
+
+
+
+
+
+</navigation>

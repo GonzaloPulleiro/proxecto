@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/loginPageBackground"
+    tools:context=".InicialFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:paddingTop="16dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="132dp"
+            android:text="@string/hello"
+            android:textAppearance="@style/TextAppearance.ComoComo.Title" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/iniciar"
+            style="@style/Widget.ComoComo.Button"
+            android:layout_width="355dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="@string/iniciar" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/registrar"
+            style="@style/Widget.ComoComo.Button"
+            android:layout_width="356dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_toStartOf="@id/next_button"
+            android:layout_toLeftOf="@id/next_button"
+            android:text="@string/registrar" />
+
+
+
+</LinearLayout>
+
+</ScrollView>
