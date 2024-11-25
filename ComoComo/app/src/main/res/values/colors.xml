@@ -2,16 +2,19 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="loginPageBackground">#FFCFCF</color>
 
-
-    <color name="colorPrimary">#E0E0E0</color>
-    <color name="colorPrimaryDark">#FBB8AC</color>
-    <color name="colorAccent">#FEDBD0</color>
-    <color name="textColorPrimary">#442C2E</color>
     <color name="toolbarIconColor">#FFFFFF</color>
     <color name="loginPageBackgroundColor">#FFFFFF</color>
     <color name="productGridBackgroundColor">#FFFFFF</color>
 
     <color name="textInputOutlineColor">#FBB8AC</color>
+    <color name="loginPageBackground">#E0F2F1</color>
+    <color name="BackgroundReceta">#E0F2F1</color>
+    <color name="colorPrimary">#080908</color>
+    <color name="colorPrimaryDark">#009688</color>
+    <color name="colorAccent">#80cbc4</color>
+    <color name="backgroundColor">#E0E0E0</color>
+    <color name="textColorPrimary">#050504</color>
+
+
 </resources>

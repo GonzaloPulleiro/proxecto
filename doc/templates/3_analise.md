@@ -17,12 +17,12 @@ engadilas a favoritas, engadilas a un menú semanal, subir máis recetas, modifi
 3. Xestión de favoritos.
   3.1. O sistema xestionará a alta e baixa de recetas engadidas a favoritas.
 4. Xestión de menú semanal.
-  4.1. O sistema xestionará a alta, baixa e modificación das recetas incluidas no menú semanal.
+  4.1. O sistema xestionará a alta e baixa das recetas incluidas no menú semanal.
  
 ## Requerimentos non funcionais
 1. Cumplirase o estándar WAI nivel A.
 2. O sistema será desenvolvido para Android.
-3. O sistema empregará API 21 ("Lollipop"; Android 5.0)
+3. O sistema empregará API 21.
 
 ## Tipos de usuarios
 O sistema terá dous tipos de usuarios.
@@ -79,11 +79,15 @@ recursos e temporalización necesaria para cada fase.
 6. Xestión de favoritos
   6.1. Alta e baixa
 7. Xestión de menú semanal
-  7.1. Alta, baixa, modificación e consulta
+  7.1. Alta, baixa e consulta
 8. Probas de aplicación
   8.1. Probas do funcionamento da aplicación
 9. Entrega proxecto
 
 
 ## Melloras futuras
-É posible que o noso proxecto se centre en resolver un problema concreto que se poderá ampliar no futuro con novas funcionalidades, novas interfaces, etc.
+Incluir a base de datos nun servidor e poder compartir a aplicación con outros usuarios, e non tan só no dispositivo local.
+Mellora da gama de cores empregada, xunto co tipo de letra.
+Ampliación da base das recetas.
+Búsqueda por ingredientes. 
+Elaboración automática dunha lista da compra en función das recetas incluidas no menú semanal.

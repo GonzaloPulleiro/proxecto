@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/loginPageBackground">
+    android:background="@color/BackgroundReceta">
 
 
-    <!-- Bottom Navigation -->
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="0dp"
         android:padding="16dp">
 
 
@@ -23,50 +22,71 @@
             android:padding="10dp"
             android:text="Tienes un total de 0 recetas favoritas"
             android:textSize="15sp"
-            android:visibility="visible" />
+            android:visibility="gone" />
 
-        <Spinner
-            android:id="@+id/spinner_order"
-            android:layout_width="127dp"
-            android:layout_height="wrap_content"
+        <FrameLayout
+            android:layout_width="142dp"
+            android:layout_height="35dp"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="77dp"
-            android:layout_marginEnd="26dp"
-            android:layout_marginBottom="8dp"
-            android:layout_toEndOf="@+id/text_view_mensaje" />
+            android:layout_marginEnd="17dp">
+            <Spinner
+                android:id="@+id/spinnerorder"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:paddingEnd="40dp"
+                />
+            <ImageView
+                android:id="@+id/spinner_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/ic_sort"
+                android:rotationY="180"
+                android:contentDescription="Icono del Spinner" />
+
+
+        </FrameLayout>
 
         <EditText
             android:id="@+id/searchEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/spinner_order"
-            android:layout_marginTop="8dp"
-            android:hint="Buscar receta por nombre"
+            android:layout_width="185dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="0dp"
+            android:cursorVisible="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:hint="Nombre de la receta"
             android:imeOptions="actionSearch"
             android:inputType="text"
             android:visibility="gone" />
 
     </RelativeLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
         android:layout_width="match_parent"
-        android:layout_height="562dp"
-
-        android:layout_above="@id/bottom_navigation"
+        android:layout_height="match_parent"
         android:layout_below="@id/relativeLayout"
+        android:layout_above="@+id/bottom_navigation_margin">
 
-
-        android:layout_marginTop="1dp"
-        android:layout_marginBottom="-2dp"
-        android:clipToPadding="false"
-        android:padding="8dp" />
-
-    <include
-        layout="@layout/navigation_layout"
-        android:id="@+id/bottom_navigation"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/relativeLayout"
+            android:layout_above="@+id/bottom_navigation_margin"
+            android:clipToPadding="false"
+            android:padding="8dp"
+            tools:ignore="NotSibling" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    <View
+        android:id="@+id/bottom_navigation_margin"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true" />
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="invisible" />
+
 
 </RelativeLayout>

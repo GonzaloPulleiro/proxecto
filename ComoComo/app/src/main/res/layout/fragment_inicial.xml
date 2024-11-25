@@ -5,8 +5,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/loginPageBackground"
-    tools:context=".InicialFragment">
+    android:background="@color/BackgroundReceta"
+    tools:context=".inicio.InicialFragment">
 
 
     <LinearLayout
@@ -31,22 +31,23 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/iniciar"
             style="@style/Widget.ComoComo.Button"
-            android:layout_width="355dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:text="@string/iniciar" />
+            android:text="@string/iniciar"
+            android:layout_gravity="center_horizontal"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/registrar"
             style="@style/Widget.ComoComo.Button"
-            android:layout_width="356dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="12dp"
-            android:layout_marginRight="12dp"
+
             android:layout_toStartOf="@id/next_button"
             android:layout_toLeftOf="@id/next_button"
-            android:text="@string/registrar" />
+            android:text="@string/registrar"
+            android:layout_gravity="center_horizontal" />
 
 
 

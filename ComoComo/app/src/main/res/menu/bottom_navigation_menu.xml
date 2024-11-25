@@ -2,27 +2,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/inicio"
-        android:enabled="true"
-        android:icon="@drawable/ic_home"
+        android:icon="@drawable/ic_home2"
         android:title="@string/text_label_1"/>
     <item
-        android:id="@+id/recetas"
-        android:enabled="true"
+        android:id="@+id/receta"
         android:icon="@drawable/ic_recipe"
         android:title="@string/text_label_2"/>
     <item
         android:id="@+id/menu"
-        android:enabled="true"
         android:icon="@drawable/ic_menu"
         android:title="@string/text_label_3"/>
     <item
-        android:id="@+id/favoritas"
-        android:enabled="true"
+        android:id="@+id/favoritos"
         android:icon="@drawable/ic_favorite"
         android:title="@string/text_label_4"/>
     <item
         android:id="@+id/perfil"
-        android:enabled="true"
         android:icon="@drawable/ic_user"
         android:title="@string/text_label_5"/>
 </menu>

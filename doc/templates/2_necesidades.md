@@ -29,8 +29,8 @@
     
     4.4. Que medios, actividades e recursos van poñer en xogo? 
 
-    >En canto ós medios non están todavía definidos por completo, posto que aínda están suxeitos a variacións. O que si é seguro é que se empregará GitLab para o control de versións.     
-    >Respecto ás actividades, realizarase un cronograma no que esté definido a planificación, execución e o peche do proxecto.
+    >En canto ós medios empregarei DBeaver para crear a base de datos, AndroidStudio para desenvolver a aplicación e GitLab para o control de versións.     
+    >Respecto ás actividades, realizarase un diagrama de Gantt no que esté definido a planificación, execución e o peche do proxecto.
     >Dos recursos, o principal encargado serei eu mesmo, Gonzalo. Contarei co meu titor para que revise o meu traballo, e poñamos ideas en común.  
     
     4.5. Que actividades se van realizar? 
@@ -39,7 +39,7 @@
     
     4.6. Que metodoloxía se vai empregar para levar a cabo o traballo?
 
-    >Unha metodoloxía çaxil, como por exemplo Scrum. 
+    >Unha metodoloxía en espiral. 
     
     4.7. Que persoas serían precisas para realizar o proxecto con éxito? 
 

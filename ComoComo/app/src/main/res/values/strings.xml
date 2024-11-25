@@ -1,12 +1,13 @@
 <resources>
     <string name="app_name">ComoComo</string>
-    <string name="titulo">ComoComo</string>
+    <string name="titulo">Como Como</string>
     <string name="username">Nombre</string>
     <string name="password">Contraseña</string>
+    <string name="passwordConfirm">Repita la contraseña</string>
     <string name="next">Siguiente</string>
     <string name="cancel">Cancelar</string>
     <string name="iniciar">Iniciar Sesión</string>
-    <string name="registrar">Registarse</string>
+    <string name="registrar">Registrarse</string>
     <string name="introduce">Introduce los siguientes datos</string>
     <string name="crearcuenta">Completa los campos</string>
     <string name="email">Email</string>
@@ -14,13 +15,32 @@
     <string name="filter">Filtrar</string>
 
     <string name="hello">Bienvenid@</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
     <string name="text_label_1">Inicio</string>
     <string name="text_label_2">Recetas</string>
     <string name="text_label_3">Menú</string>
     <string name="text_label_4">Favoritos</string>
     <string name="text_label_5">Perfil</string>
 
+
+    <string name="product_title">Nombre de la receta</string>
+    <string name="product_description">Descripcion de la receta</string>
+    <string name="product_ingredients">Ingredintes de la receta</string>
+    <string name="product_preparacion">Preparación de la receta</string>
+
+    <string name="fav">Favorita</string>
+    <string name="menu_add">Añadir a menú</string>
+    <string name="delete">Eliminar receta</string>
+    <string name="edit">Editar receta</string>
+
+    <string name="misRecetas">Mis Recetas</string>
+    <string name="cerrarSesion">Cerrar Sesión</string>
+    <string name="eliminarUsuarios">Eliminar Usuarios</string>
+    <string name="aceptar">ACEPTAR</string>
+    <string name="subirReceta">Subir Receta</string>
+    <string name="editarReceta">Editar Receta</string>
+    <string name="eliminarReceta">Eliminar Receta</string>
+    <string name="actualizarReceta">Actualizar Receta</string>
 
 </resources>

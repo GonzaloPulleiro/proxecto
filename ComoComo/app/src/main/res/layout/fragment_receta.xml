@@ -4,69 +4,81 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/loginPageBackground">
+    android:background="@color/BackgroundReceta">
 
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:layout_alignParentTop="true"
+        android:layout_marginTop="1dp"
         android:padding="16dp">
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="93dp"
-            android:layout_height="31dp"
-            android:layout_alignParentStart="true"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="Filtrar por" />
-
+<FrameLayout
+    android:layout_width="142dp"
+    android:layout_height="35dp"
+    android:layout_alignParentEnd="true"
+    android:layout_marginEnd="17dp">
         <Spinner
-            android:id="@+id/spinner_order"
-            android:layout_width="127dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="116dp"
-            android:layout_marginEnd="39dp"
-            android:layout_marginBottom="8dp"
-            android:layout_toEndOf="@+id/textView2" />
+            android:id="@+id/spinnerorder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:paddingEnd="40dp"
+            />
+         <ImageView
+            android:id="@+id/spinner_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/ic_sort"
+            android:rotationY="180"
+            android:contentDescription="Icono del Spinner" />
+</FrameLayout>
 
         <EditText
             android:id="@+id/searchEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/spinner_order"
-            android:layout_marginTop="8dp"
-            android:hint="Buscar receta por nombre"
-            android:inputType="text"
+            android:layout_width="180dp"
+            android:layout_height="62dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="0dp"
+            android:hint="Nombre de la receta"
             android:imeOptions="actionSearch"
-            android:visibility="gone"/>
+            android:inputType="text"
+            android:visibility="gone"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:cursorVisible="true"/>
 
     </RelativeLayout>
 
-    <!-- Bottom Navigation -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
         android:layout_width="match_parent"
-        android:layout_height="493dp"
-
-        android:layout_above="@id/bottom_navigation"
+        android:layout_height="match_parent"
         android:layout_below="@id/relativeLayout"
+        android:layout_above="@+id/bottom_navigation_margin">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/relativeLayout"
+            android:layout_above="@+id/bottom_navigation_margin"
+            android:clipToPadding="false"
+            android:padding="8dp"
+            tools:ignore="NotSibling" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-
-        android:layout_marginTop="-2dp"
-        android:layout_marginBottom="-2dp"
-        android:clipToPadding="false"
-        android:padding="8dp"
-        tools:ignore="NotSibling" />
-
-    <include
-        layout="@layout/navigation_layout"
-        android:id="@+id/bottom_navigation"
+    <View
+        android:id="@+id/bottom_navigation_margin"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true" />
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="invisible" />
+
 
 </RelativeLayout>

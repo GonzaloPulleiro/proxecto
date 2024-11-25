@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/BackgroundReceta"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:theme="@style/Widget.AppCompat.Toolbar"
+        android:layout_height="?attr/actionBarSize"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:elevation="4dp"/>
+
+    <TextView
+        android:id="@+id/textViewMensaje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textAlignment="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="40dp"
+        android:text="Has aportado un total de 0 recetas "
+        android:textAppearance="@style/TextAppearance.ComoComo.Title" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/subirReceta"
+        style="@style/Widget.ComoComo.Button"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center"
+        android:text="@string/subirReceta" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/editarReceta"
+        style="@style/Widget.ComoComo.Button"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center"
+        android:text="@string/editarReceta" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/eliminarReceta"
+        style="@style/Widget.ComoComo.Button"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center"
+        android:text="@string/eliminarReceta" />
+
+
+</LinearLayout>

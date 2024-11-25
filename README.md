@@ -1,19 +1,23 @@
 # Proyecto fin de ciclo
 
-> Propóñome a realizar un entregable, o cal vai a consistir nunha aplicación de xestión de receitas. Esta aplicación, todavía está por determinar se consistirá nunha aplicación móbil ou de escritorio.    
+> Propóñome a realizar un entregable, o cal vai a consistir nunha aplicación de xestión de recetas, COMO COMO.
+ Esta aplicación,  consistirá nunha aplicación móbil na cal empregarei a linguaxe Kotlin para a súa realización e o IDE Android Studio.    
 
 ## Descripción
 
-> A aplicación contará con algunhas receitas xa de base, que poderás visualizar: ver unha imaxe, os ingredientes que contén, as cantidades e a súa elaboración. Tamén terá opción de engadir as túas propias receitas. Haberá que introducir os ingredientes, as cantidades e a forma de elaboración da mesma.  
->Con todas as receitas dispoñibles poderás organizar un menú semanal, e tamén poderás visualizar as receitas que se marquen como favoritas, para poder acceder a elas máis facilmente.  
->Para levar a cabo esta aplicación, a falta do linguaxe (recordemos que aínda está por determinar se será aplicación móbil ou de escritorio), empregarase como xestor de base de datos, MySQL (escollido por ser de código aberto, fácil de empregar e con alto
-rendemento, principalmente).  
->O uso destas tecnoloxías pode estar suxeito a variacións, segundo a necesidade das mesmas.  
+> A aplicación contará con algunhas recetas xa de base, que poderás visualizar: ver unha imaxe, os ingredientes que contén, as cantidades e a súa elaboración. 
+> Tamén terá opción de engadir as túas propias recetas. Haberá que introducir os ingredientes, as cantidades e a forma de elaboración da mesma. 
+> Levarase a cabo unha xestión de usuarios, na cal existirá un usuario administrador, que terá as mesmas opcións que un usuario normal (crear recetas, editalas, eliminalas, engadir recetas a un listado de favoritos,
+>  xerar un menú semanal) e a maiores poderá eliminar outros usuarios existentes.  
+> Con todas as recetas dispoñibles poderás organizar un menú semanal, e tamén poderás visualizar as recetas que se marquen como favoritas, para poder acceder a elas máis facilmente.  
+> Para levar a cabo esta aplicación, empregarei a linguaxe Kotlin, como xestor de base de datos usarei SQLite (escollido por ser de código aberto, fácil de empregar e con alto
+rendemento, ademais de ser principalmente a base de datos que se inclue con Android).  
+> O uso destas tecnoloxías pode estar suxeito a variacións, segundo a necesidade das mesmas.  
 
 ## Instalación / Puesta en marcha
 
-> *TODO*: En este apartado describe con toda precisión y a poder ser con la mayor simplicidad/facilidad posible, cómo poner en marcha tu aplicación para probarla (en un ambiente local). Se valorará muy positivamente que este proceso sea lo más fácil posible, con una simple instrucción (p. e. un script de instalación).
-> Si tu proyecto es documental, realiza una especificación de cómo va a ser este proceso. En otras palabras, realiza este apartado independientemente que no haya implementación.
+> Esta aplicación podese instalar en calquera dispositivo móvil Android actual, tan só é preciso pasar a aplicación dende o meu pc ao teléfono.
+> A posta en marcha simplemente consta de iniciar a aplicación, rexistrarse e comezar a coñecela.
 
 ## Uso
 

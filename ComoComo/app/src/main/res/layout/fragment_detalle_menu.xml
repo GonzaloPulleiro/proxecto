@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    android:background="@color/BackgroundReceta">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:theme="@style/Widget.AppCompat.Toolbar"
+        android:layout_height="?attr/actionBarSize"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:elevation="4dp"/>
+
+    <!-- Sección de Desayuno -->
+
+    <TextView
+        android:id="@+id/tv_menu_dia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:text="Menú para el día XX de XX"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:gravity="center"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tv_menu_dia"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="55dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="16dp">
+
+            <TextView
+                android:id="@+id/tv_desayuno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Desayuno"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/receta_layout_desayuno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" />
+
+            <!-- Haz lo mismo para almuerzo, snack y cena -->
+
+
+            <!-- Almuerzo -->
+
+            <TextView
+                android:id="@+id/tv_almuerzo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Almuerzo"
+                android:textSize="18sp"
+                android:layout_marginTop="24dp"
+                android:textStyle="bold"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/receta_layout_almuerzo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"/>
+
+            <TextView
+                android:id="@+id/tv_snack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Snack"
+                android:textSize="18sp"
+                android:layout_marginTop="24dp"
+                android:textStyle="bold"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/receta_layout_snack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"/>
+
+            <!-- Haz lo mismo para almuerzo, snack y cena -->
+
+
+            <!-- Cena -->
+            <TextView
+                android:id="@+id/tv_cena"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cena"
+                android:textSize="18sp"
+                android:layout_marginTop="24dp"
+                android:textStyle="bold"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/receta_layout_cena"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"/>
+
+            <!-- Haz lo mismo para almuerzo, snack y cena -->
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,28 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/loginPageBackground">
+    android:background="@color/BackgroundReceta"
+    android:orientation="vertical">
 
     <!-- Título o encabezado de la pantalla -->
+
     <TextView
-        android:id="@+id/tv_titulo_perfil"
+        android:id="@+id/text_view_mensaje"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Perfil"
-        android:textSize="24sp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
-        android:textStyle="bold" />
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="40dp"
+        android:text="Perfil de "
+        android:textAppearance="@style/TextAppearance.ComoComo.Title" />
 
-    <!-- Botón de Registrarse -->
-
-    <!-- Barra de navegación en la parte inferior de la pantalla -->
-    <include
-        layout="@layout/navigation_layout"
-        android:id="@+id/bottom_navigation"
-
+    <FrameLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iconoAdmin"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="start"
+            android:layout_marginStart="55dp"
+            android:contentDescription="Icono del Spinner"
+            android:src="@drawable/ic_user"
+            android:visibility="gone"/>
+    </FrameLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/recetas"
+        style="@style/Widget.ComoComo.Button"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true" />
-</RelativeLayout>
+        android:layout_marginTop="150dp"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center"
+        android:text="@string/misRecetas" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/eliminar"
+        style="@style/Widget.ComoComo.Button"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center"
+        android:text="@string/eliminarUsuarios"
+        android:visibility="gone"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/cerrar"
+        style="@style/Widget.ComoComo.Button"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:text="@string/cerrarSesion" />
+
+</LinearLayout>

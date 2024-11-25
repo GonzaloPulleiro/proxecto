@@ -1,0 +1,124 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/BackgroundReceta"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ImageButton
+            android:id="@+id/imageViewReceta"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/white"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_foto" />
+
+        <EditText
+            android:id="@+id/editTextNombreReceta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Nombre de la receta"
+            android:inputType="text"/>
+
+        <EditText
+            android:id="@+id/editTextTiempoPreparacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Tiempo de preparación"
+            android:inputType="number"/>
+
+        <!-- Fila de ingrediente (será duplicada dinámicamente) -->
+        <!-- Esta fila es solo un ejemplo, se agregarán más dinámicamente con el código -->
+        <LinearLayout
+            android:id="@+id/linearLayoutIngredientes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/editTextNombreIngrediente"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Ingrediente"
+                    android:inputType="text" />
+
+                <EditText
+                    android:id="@+id/editTextCantidadIngrediente"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Cantidad"
+                    android:inputType="text" />
+
+                <ImageButton
+                    android:id="@+id/removeButton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="8dp"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="Eliminar ingrediente"
+                    android:src="@drawable/ic_delete"
+                    android:background="@null"
+                    android:layout_gravity="center"/>
+                <ImageButton
+                    android:id="@+id/addIngrediente"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_more"
+                    android:background="@null"
+                    android:layout_gravity="center"/>
+
+        </LinearLayout>
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/editTextPreparacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Preparación"
+            android:inputType="textMultiLine"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/addReceta"
+                style="@style/Widget.ComoComo.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginRight="10dp"
+                android:text="@string/subirReceta" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/cancelarSubida"
+                style="@style/Widget.ComoComo.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:text="@string/cancel" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
