@@ -28,6 +28,8 @@ import com.app.comocomo.DatabaseHelper
 import com.app.comocomo.R
 import com.app.comocomo.databinding.FragmentDetalleRecetaBinding
 import java.io.File
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 class DetalleRecetaFragment : Fragment() {
 
@@ -259,7 +261,18 @@ class DetalleRecetaFragment : Fragment() {
         datePicker.init(year, month, day) { view, selectedYear, selectedMonth, selectedDay ->
             // Cuando el usuario seleccione un día, mostramos el diálogo
             val fechaSeleccionada = "$selectedDay/${selectedMonth + 1}/$selectedYear"
-            muestraDialogo(fechaSeleccionada)
+
+            val formato = SimpleDateFormat("dd/MM/yyyy", Locale("es", "ES"))
+            val fechaFormateada =
+                try{
+                    val fechaDate = formato.parse(fechaSeleccionada)
+                    formato.format(fechaDate)
+                } catch (e: Exception){
+                    e.printStackTrace()
+                    fechaSeleccionada
+                }
+
+            muestraDialogo(fechaFormateada)
             // Cerrar el DatePickerDialog de inmediato
             datePickerDialog.dismiss()
         }
@@ -305,6 +318,7 @@ class DetalleRecetaFragment : Fragment() {
         findNavController().navigate(R.id.action_detalleRecetaFragment_to_editarRecetaDetalleFragment, bundle)
     }
 
+    @SuppressLint("SuspiciousIndentation")
     private fun deleteReceta(id: Int) {
             val builder = AlertDialog.Builder(requireContext())
                 builder.setTitle("Cancelar")

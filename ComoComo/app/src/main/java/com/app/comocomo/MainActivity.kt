@@ -126,7 +126,7 @@ class MainActivity : AppCompatActivity() {
     // Actualizar los iconos del BottomNavigationView
     private fun actualizaIconosBottom(selectedId: Int) {
         // Iconos de base
-        changeIcon(R.id.inicio, R.drawable.ic_home)
+        changeIcon(R.id.inicio, R.drawable.ic_home1)
         changeIcon(R.id.receta, R.drawable.ic_recipe)
         changeIcon(R.id.menu, R.drawable.ic_menu)
         changeIcon(R.id.favoritos, R.drawable.ic_favorite)

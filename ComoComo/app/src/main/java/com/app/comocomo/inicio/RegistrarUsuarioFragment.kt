@@ -3,10 +3,8 @@ package com.app.comocomo.inicio
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.text.TextUtils
-import android.text.method.PasswordTransformationMethod
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
@@ -14,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.app.comocomo.DatabaseHelper
 import com.app.comocomo.R
 import com.app.comocomo.databinding.FragmentRegistrarUsuarioBinding
+import org.mindrot.jbcrypt.BCrypt
 
 
 class RegistrarUsuarioFragment : Fragment() {
@@ -41,12 +40,14 @@ class RegistrarUsuarioFragment : Fragment() {
             val contraseña = binding.passwordEditText.text.toString().trim()
 
             if (validarDatos(nombre, email, contraseña)) {
-                // verificar si nombre ya existe
-                val usuarioExistente = db.obtenerUsuarioPorNombreYContraseña(nombre, contraseña)
+                // Obtener todos los usuarios con el mismo nombre
+                val usuarios = db.obtenerUsuariosPorNombre(nombre)
+                val contraseñaCoincide = usuarios.any { usuario ->
+                    verificarContraseña(contraseña, usuario.contraseña)
+                }
 
-                if (usuarioExistente != null) {
+                if (contraseñaCoincide) {
                     // si nombre existe y contraseña es la misma
-                    if (usuarioExistente.contraseña.trim() == contraseña.trim()) {
                         Toast.makeText(
                             requireContext(),
                             "Modifica nombre o contraseña",
@@ -56,13 +57,12 @@ class RegistrarUsuarioFragment : Fragment() {
                         // si nombre existe pero contraseña es diferente
                         registrarUsuario(nombre, email, contraseña)
                     }
-                } else {
-                    registrarUsuario(nombre, email, contraseña)
-                }
             }
         }
         return view
     }
+
+
 
     private fun registrarUsuario(nombre: String, email: String, contraseña: String){
                 // existe un admin?
@@ -81,7 +81,8 @@ class RegistrarUsuarioFragment : Fragment() {
                     ).show()
                     // registrar usuario
                 } else {
-                    val resultado = db.registrarUsuarioBD(nombre, email, contraseña)
+                    val cifrada = cifrarContraseña(contraseña)
+                    val resultado = db.registrarUsuarioBD(nombre, email, cifrada)
                     if (resultado != -1L) {
                         Toast.makeText(requireContext(), "Registro realizado", Toast.LENGTH_SHORT)
                             .show()
@@ -143,8 +144,8 @@ class RegistrarUsuarioFragment : Fragment() {
 
 
         // Verificar que las contraseñas coincidan
-        val confirmaPassword = binding.password2EditText.text.toString().trim()
-        if (contraseña != confirmaPassword) {
+        val confirmaContraseña = binding.password2EditText.text.toString().trim()
+        if (contraseña != confirmaContraseña) {
             binding.password2TextInput.error = "Las contraseñas no coinciden"
             return false
         } else {
@@ -153,6 +154,17 @@ class RegistrarUsuarioFragment : Fragment() {
 
         return true
     }
+
+    // Función para cifrar la contraseña
+    private fun cifrarContraseña(contraseña: String): String {
+        return BCrypt.hashpw(contraseña, BCrypt.gensalt())
+    }
+
+    // Función para verificar la contraseña
+    private fun verificarContraseña(contraseña: String, hash: String): Boolean {
+        return BCrypt.checkpw(contraseña, hash)
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

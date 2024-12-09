@@ -125,7 +125,7 @@ class FavoritoAdapter(private val context: Context, private var cursor: Cursor?,
         } else {
             holder.recetaNombre.text = "Receta no disponible"
             holder.recetaTiempo.text = ""
-            holder.recetaImage.setImageResource(R.drawable.placeholder)
+            holder.recetaImage.setImageResource(R.drawable.default_image)
         }
 
     }

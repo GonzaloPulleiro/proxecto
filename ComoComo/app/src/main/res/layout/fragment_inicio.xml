@@ -5,56 +5,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/BackgroundReceta"
     android:orientation="vertical"
+    android:background="@color/BackgroundReceta"
     tools:context=".principal.InicioFragment"
     android:id="@+id/container_inicio">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center_horizontal">
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="61dp"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/titulo"
-        android:textAppearance="@style/TextAppearance.ComoComo.Title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    <!-- Contenedor principal para la imagen y el botón -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
+        <!-- Imagen principal que ocupa todo el espacio disponible -->
+        <ImageView
+            android:id="@+id/background_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/principal"
+            tools:ignore="MissingConstraints" />
+
+        <!-- Botón de imagen sobre la imagen -->
         <ImageButton
             android:id="@+id/info"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@android:drawable/ic_menu_info_details"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="end|bottom"
+            android:layout_margin="16dp"
             android:background="@null"
-            android:scaleType="centerCrop"
-            android:layout_gravity="end|center"
-            android:foregroundGravity="right"
-            android:tooltipText="Información sobre la aplicación"
-            />
+            android:contentDescription="Información sobre la aplicación"
+            android:src="@android:drawable/ic_menu_info_details"
+            android:tooltipText="Información sobre la aplicación" />
+    </FrameLayout>
 
-    </LinearLayout>
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="16dp"
-        android:layout_weight="1"
-        android:scaleType="centerCrop"
-        android:src="@drawable/portada"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="2dp" />
-
+    <!-- Espacio reservado para el Bottom Navigation -->
+    <View
+        android:id="@+id/bottom_navigation_margin"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/BackgroundReceta"
+        android:visibility="invisible" />
 
 </LinearLayout>
-

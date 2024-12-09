@@ -176,6 +176,26 @@ class DatabaseHelper(private var context: Context) : SQLiteOpenHelper(context, D
         return usuario
     }
 
+    fun obtenerUsuariosPorNombre(nombre: String): List<Usuario> {
+        val usuarios = mutableListOf<Usuario>()
+        val db = this.readableDatabase
+        val cursor = db.rawQuery("SELECT * FROM $TABLE_USUARIO WHERE nombre = ?", arrayOf(nombre))
+
+        if (cursor.moveToFirst()){
+            do{
+                val id = cursor.getInt(cursor.getColumnIndexOrThrow("id"))
+                val nombre = cursor.getString(cursor.getColumnIndexOrThrow("nombre"))
+                val email = cursor.getString(cursor.getColumnIndexOrThrow("email"))
+                val contraseña = cursor.getString(cursor.getColumnIndexOrThrow("contraseña"))
+                val esAdmin = cursor.getInt(cursor.getColumnIndexOrThrow("esAdmin")) == 1
+                usuarios.add(Usuario(id, nombre, email, contraseña, esAdmin))
+            } while (cursor.moveToNext())
+        }
+        cursor.close()
+        return usuarios
+    }
+
+
     // Obtener el id del usuario cuando se logea
     fun obtenerUsuarioPorId(usuarioID: Int): Usuario? {
         val db = this.readableDatabase
@@ -550,23 +570,30 @@ class DatabaseHelper(private var context: Context) : SQLiteOpenHelper(context, D
         val recetas = mutableListOf<Pair<String, Receta>>()
         val db = this.readableDatabase
 
-        val query = "SELECT tipo_comida, id_receta FROM menu_semanal WHERE dia = ? AND id_usuario = ?"
+        val query =
+            "SELECT tipo_comida, id_receta FROM menu_semanal WHERE dia = ? AND id_usuario = ?"
         val cursor = db.rawQuery(query, arrayOf(dia, idUsuario.toString()))
 
+        try {
+            if (cursor.moveToFirst()) {
+                do {
+                    val tipoComida = cursor.getString(cursor.getColumnIndexOrThrow("tipo_comida"))
+                    val idReceta = cursor.getInt(cursor.getColumnIndexOrThrow("id_receta"))
+                    val receta = obtenerRecetaPorId(idReceta) // Obtener receta por ID
+                    if (receta != null) {
+                        recetas.add(Pair(tipoComida, receta))
+                    } else {
+                        Log.w("DatabaseHelper", "Receta con ID $idReceta no encontrada")
+                    }
+                } while (cursor.moveToNext())
+            }
+        } catch (e: Exception) {
+            Log.e("DatabaseHelper", "Error al obtener recetas: ${e.message}")
+        } finally {
+            cursor.close()
 
-        if (cursor.moveToFirst()) {
-            do {
-                val tipoComida = cursor.getString(cursor.getColumnIndexOrThrow("tipo_comida"))
-                val idReceta = cursor.getInt(cursor.getColumnIndexOrThrow("id_receta"))
-                val receta = obtenerRecetaPorId(idReceta) // Obtener receta por ID
-                if (receta != null) {
-                    recetas.add(Pair(tipoComida, receta))
-                }
-            } while (cursor.moveToNext())
         }
-        cursor.close()
-
-        return recetas
+            return recetas
     }
 
     fun eliminarRecetaDelMenu(idReceta: Int, idUsuario: Int, fecha: String, tipoComida: String) {

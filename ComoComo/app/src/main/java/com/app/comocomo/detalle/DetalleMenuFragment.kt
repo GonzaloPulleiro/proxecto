@@ -1,5 +1,6 @@
 package com.app.comocomo.detalle
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Build
 import android.os.Bundle
@@ -117,6 +118,7 @@ class DetalleMenuFragment : Fragment() {
         return sharedPreferences.getInt("usuario_id", -1) // Devuelve -1 si no está guardado
     }
 
+    @SuppressLint("SuspiciousIndentation")
     private fun eliminarRecetaDelMenu(receta: Receta, tipoComida: String) {
         // Mostrar un diálogo de confirmación
         val msj =  android.app.AlertDialog.Builder(requireContext())

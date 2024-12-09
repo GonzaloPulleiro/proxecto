@@ -25,49 +25,73 @@ class IniciarSesionFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+      // Inflate the layout for this fragment
       _binding = FragmentIniciarSesionBinding.inflate(inflater, container, false)
       val view = binding.root
 
       db = DatabaseHelper(requireContext())
 
-      binding.nextButton.setOnClickListener{
+      binding.nextButton.setOnClickListener {
           val nombre = binding.nombreUsuarioText.text.toString().trim()
           val contraseña = binding.passwordEditText.text.toString().trim()
 
-          if(nombre.isNotEmpty() && contraseña.isNotEmpty()) {
+          if (nombre.isNotEmpty() && contraseña.isNotEmpty()) {
               // Verificar si hay algún usuario ya registrado
-              if(db.obtenerUsuariosRegistrados().isEmpty()){
-                      Toast.makeText(requireContext(), "Debes registrarte", Toast.LENGTH_SHORT).show()
-                  }
-              else {
+              if (db.obtenerUsuariosRegistrados().isEmpty()) {
+                  Toast.makeText(requireContext(), "Debes registrarte", Toast.LENGTH_SHORT).show()
+              } else {
 
-                  val usuario = db.obtenerUsuarioPorNombreYContraseña(nombre, contraseña)
+                  val usuario = db.obtenerUsuariosPorNombre(nombre)
 
-                  if (usuario == null) {
+                  if (usuario.isEmpty()) {
                       Toast.makeText(requireContext(), "Usuario no registrado", Toast.LENGTH_SHORT)
                           .show()
                   } else {
-                      if (usuario.contraseña.trim() == contraseña.trim()) {
-                          guardarUsuarioId(usuario.id)
+                      // Buscar usuarios con el mismo nombre
+                      val usuarios = db.obtenerUsuariosPorNombre(nombre)
 
-                          findNavController().navigate(R.id.action_iniciarSesionFragment_to_inicioFragment)
-                      } else {
+                      if (usuarios.isEmpty()) {
                           Toast.makeText(
                               requireContext(),
-                              "Contraseña incorrecta",
+                              "Usuario no registrado",
                               Toast.LENGTH_SHORT
-                          )
-                              .show()
+                          ).show()
+                      } else {
+                          // Verificar la contraseña
+                          val usuarioValido = usuarios.firstOrNull { usuario ->
+                              verificarContraseña(contraseña, usuario.contraseña)
+                          }
+
+                          if (usuarioValido != null) {
+                              guardarUsuarioId(usuarioValido.id)
+                              findNavController().navigate(R.id.action_iniciarSesionFragment_to_inicioFragment)
+                          } else {
+                              Toast.makeText(
+                                  requireContext(),
+                                  "Contraseña incorrecta",
+                                  Toast.LENGTH_SHORT
+                              ).show()
+                          }
                       }
                   }
-              }
-          } else {
-              Toast.makeText(requireContext(), "Completa todos los campos", Toast.LENGTH_SHORT).show()
-          }
-      }
 
-        return view
+          }
+              } else {
+                  Toast.makeText(requireContext(), "Completa todos los campos", Toast.LENGTH_SHORT)
+                      .show()
+              }
+
+      }
+          return view
+  }
+
+    // Función para cifrar la contraseña
+    private fun verificarContraseña(contraseña: String, hash: String): Boolean {
+        return try{
+            org.mindrot.jbcrypt.BCrypt.checkpw(contraseña, hash)
+        } catch (e: Exception){
+            false
+        }
     }
 
     // sharedpreferences para ser recuperado más tarde sin necesidad de hacer consultas a la bd
