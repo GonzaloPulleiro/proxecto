@@ -132,7 +132,7 @@ Ou tamén o seguinte [manual](doc/diagramas/Manual_Usuario.pdf).
 > Decanteime pola realización deste proxecto por aportar algo á comunidade que non sexa de pago, a meta principal é realizar unha aplicación fácil e intuitiva, sinxela de usar, e que aporte ideas novas á comunidade.  
 >
 > 
-> Podese contactar conmigo a través do correo [gonzalopju@gmail.com](mailto:gonzalopju@gmail.com) ou a través do número telefónico [665013395](tel:+34665013395).  
+> Podese contactar conmigo a través do correo [gonzalopju@gmail.com](mailto:gonzalopju@gmail.com).
 
 ## Licencia
 
@@ -193,8 +193,7 @@ Ou tamén o seguinte [manual](doc/diagramas/Manual_Usuario.pdf).
 >
 > [gonzalopju@gmail.com](mailto:gonzalopju@gmail.com) 
 > ___
-> [665013395](tel:+34665013395)  
->___
+
 
 ## Links
 
