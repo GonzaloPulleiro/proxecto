@@ -171,7 +171,7 @@ Ou tamén o seguinte [manual](doc/diagramas/Manual_Usuario.pdf).
 >
 > 1. Clona o repositorio con:
 >
->     `git clone https://gitlab.iessanclemente.net/damd/a22gonzalopj`
+>     `git clone https://github.com/GonzaloPulleiro/proxecto`
 > 
 > 2. Configura o IDE. Neste caso _Android Studio_.
 > 
